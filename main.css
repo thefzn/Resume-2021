@@ -312,10 +312,6 @@ section h2 {
   }
 }
 @media screen and (max-width: 850px) {
-  main {
-    margin: 10px 0;
-    border-radius: 0;
-  }
   aside, section {
     width: 100%;
   }
@@ -324,6 +320,10 @@ section h2 {
   }
 }
 @media screen and (max-width: 500px) {
+  main {
+    margin: 10px 0;
+    border-radius: 0;
+  }
   .sm-hide {
     display: none !important;
   }
