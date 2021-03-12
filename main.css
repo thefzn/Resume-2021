@@ -17,7 +17,7 @@ main {
   display: flex;
   flex-wrap: wrap;
   margin: 50px auto;
-  max-width: 1100px;
+  max-width: 1200px;
   overflow: hidden;
   padding: 0;
   width: 100%;
@@ -281,15 +281,36 @@ section h2 {
   top: 0;
   transform: translateX(-1px);
 }
+.email {
+  white-space: nowrap;
+}
 .sm-only {
   display: none;
+}
+.lg-only {
+  display: none ;
+}
+@media screen and (min-width: 1125px) {
+  .lg-only {
+    display: initial !important;
+  }
+  .lg-hide {
+    display: none !important;
+  }
 }
 @media screen and (max-width: 1000px) {
   aside, section {
     width: 50%;
   }
+  .lg-only {
+    display: none !important;
+  }
 }
 @media screen and (max-width: 850px) {
+  main {
+    margin: 10px 0;
+    border-radius: 0;
+  }
   aside, section {
     width: 100%;
   }
