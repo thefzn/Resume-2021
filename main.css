@@ -15,6 +15,7 @@ main {
     0 16.8px 17.6px rgba(0, 0, 0, 0.11),
     0 75px 79px rgba(0, 0, 0, 0.25);
   display: flex;
+  flex-wrap: wrap;
   margin: 50px auto;
   max-width: 1100px;
   overflow: hidden;
@@ -22,6 +23,7 @@ main {
   width: 100%;
 }
 aside {
+  box-sizing: border-box;
   padding: 25px;
   text-align: center;
   width: 38.2%;
@@ -99,7 +101,7 @@ aside ul.checklist {
 aside ul.checklist li {
   background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="%230087d6" d="M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z"></path></svg>');
   background-repeat: no-repeat;
-  background-position: 0% 50%;
+  background-position: 0% 6px;
   background-size: 13px 13px;
   line-height: 25px;
   padding: 0 0 0 20px;
@@ -107,7 +109,7 @@ aside ul.checklist li {
   width: calc(50% - 10px);
 }
 aside ul.checklist li:nth-child(odd) {
-  background-position: 100% 50%;
+  background-position: 100% 6px;
   padding: 0 20px 0 0;
   margin: 0 10px 0 0;
 }
@@ -156,6 +158,7 @@ aside article figure figcaption {
 }
 section {
   background: #fafafa;
+  box-sizing: border-box;
   margin: 0;
   padding: 25px;
   width: 61.8%;
@@ -277,4 +280,56 @@ section h2 {
   position: absolute;
   top: 0;
   transform: translateX(-1px);
+}
+.sm-only {
+  display: none;
+}
+@media screen and (max-width: 1000px) {
+  aside, section {
+    width: 50%;
+  }
+}
+@media screen and (max-width: 850px) {
+  aside, section {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 500px) {
+  .sm-hide {
+    display: none !important;
+  }
+  .sm-only {
+    display: initial !important;
+  }
+  aside article {
+    padding: 0 0 25px;
+  }
+  .timeline > article {
+    background-color: #ffffff;
+    border-radius: 2.5px 5px 5px 2.5px;
+    border-left: 5px solid #0087d6;
+    grid-template-columns: 100%;
+    grid-gap: 0;
+  } 
+  .timeline::before {
+    border-right: 5px dotted #0087d6;
+    left: 1px;
+  }
+  .timeline > article::before {
+    height: 20px;
+    left: -2px;
+    line-height: 20px;
+    top: 26px;
+    width: 20px;
+  }
+  .timeline > article address {
+    margin: 0 !important;
+    order: 0 !important;
+    padding: 15px 25px 7px 20px;
+    position: relative;
+    text-align: left !important;
+  }
+  .timeline > article .description {
+    padding: 0 25px 25px 20px;
+  }
 }
