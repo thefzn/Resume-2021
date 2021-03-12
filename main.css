@@ -314,6 +314,9 @@ section h2 {
   aside, section {
     width: 100%;
   }
+  aside h1 {
+    color: #0059a0;
+  }
 }
 @media screen and (max-width: 500px) {
   .sm-hide {
