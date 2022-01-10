@@ -9,6 +9,11 @@ html {
   overflow-y: auto;
   padding: 0;
 }
+body {
+  display: flex;
+  height: auto;
+  justify-content: center;
+}
 main {
   background-color: white;
   border-radius: 0.313rem;
